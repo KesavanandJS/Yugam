@@ -1,0 +1,1062 @@
+/* About Page Specific Styles */
+
+.about-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    background: #f8f6fc;
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 18px rgba(123,31,162,0.08);
+    animation: aboutSlideIn 1s;
+}
+@keyframes aboutSlideIn {
+    from { opacity: 0; transform: translateX(-60px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* About Hero Section */
+.about-hero-section {
+    width: 100vw;
+    min-height: 340px;
+    background: linear-gradient(120deg, #f8f6fc 60%, #f3eafd 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0 2rem 0;
+    overflow: hidden;
+}
+.about-hero-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+.about-hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about-hero-title {
+    font-size: 2.7rem;
+    font-weight: 900;
+    color: #2d114d;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+}
+.about-hero-desc {
+    color: #7B1FA2;
+    font-size: 1.18rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+.about-hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.about-stat {
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 12px #7B1FA222;
+    padding: 1.2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about-stat-number {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #7B1FA2;
+    margin-bottom: 0.3rem;
+}
+.about-stat-label {
+    color: #FF5722;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Mission & Vision Cards */
+.about-cards-section {
+    width: 100vw;
+    background: transparent;
+    position: relative;
+    padding: 0 0 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-cards-grid {
+    display: flex;
+    gap: 2.5rem;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+    justify-content: center;
+}
+.about-card {
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 24px rgba(123,31,162,0.10), 0 1.5px 8px #7B1FA222;
+    padding: 2.2rem 2rem 1.5rem 2rem;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.25s, box-shadow 0.25s, border 0.25s;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    color: #2d114d;
+    font-size: 1.08rem;
+}
+.about-card:hover {
+    transform: translateY(-10px) scale(1.04) rotate(-1deg);
+    box-shadow: 0 12px 32px rgba(255,87,34,0.15), 0 2px 12px #00e6e6cc;
+    border: 2px solid #7B1FA2;
+    background: linear-gradient(120deg, #f3eafd 60%, #fff 100%);
+    z-index: 2;
+}
+.about-card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.7rem;
+    color: #FF5722;
+}
+
+/* Team Matrix Section */
+.team-matrix {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 2.5rem;
+    justify-items: center;
+    align-items: stretch;
+    margin: 2.5rem 0 1.5rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.team-card {
+    position: relative;
+    background: linear-gradient(120deg, #fff 80%, #f3eafd 100%);
+    border-radius: 2rem;
+    box-shadow: 0 12px 40px rgba(123,31,162,0.13), 0 2px 12px #7B1FA222;
+    padding: 2.8rem 2.2rem 2.2rem 2.2rem;
+    min-width: 320px;
+    max-width: 420px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2.5px solid #f3eafd;
+    transition:
+        transform 0.28s cubic-bezier(.4,0,.2,1),
+        box-shadow 0.28s,
+        border 0.22s;
+    z-index: 2;
+    margin: 0;
+    background-clip: padding-box;
+    overflow: visible;
+    opacity: 0;
+    transform: translateY(60px) scale(0.97);
+    filter: blur(8px) brightness(0.97);
+    will-change: opacity, transform, filter;
+}
+.team-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0) brightness(1);
+    animation: contentBounce 0.7s cubic-bezier(.4,0,.2,1);
+}
+.team-card:hover {
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 0 24px 64px rgba(255,87,34,0.18), 0 2px 12px #7B1FA2cc;
+    border: 2.5px solid #FF5722;
+    background: linear-gradient(120deg, #f3eafd 60%, #fff 100%);
+    z-index: 4;
+}
+
+.team-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 6px solid #7B1FA2;
+    box-shadow: 0 6px 24px #7B1FA233;
+    background: #f3eafd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: border 0.3s;
+}
+.team-card:hover .team-image {
+    border-color: #FF5722;
+}
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Team Profile Matrix Layout (3x3 grid) with equal spacing */
+.team-carousel-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 3.5rem 3.5rem; /* Increased horizontal and vertical spacing */
+    align-items: stretch;
+    justify-items: center;
+    position: relative;
+    width: 100%;
+    padding: 0.5rem 0; /* Optional: add a little vertical padding */
+}
+
+.team-card {
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px rgba(123,31,162,0.13), 0 1.5px 8px #7B1FA222;
+    padding: 2.2rem 2rem 1.5rem 2rem;
+    min-width: 220px;
+    max-width: 270px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2.5px solid transparent;
+    position: relative;
+    overflow: visible;
+    color: #2d114d;
+    font-size: 1.08rem;
+    transition: transform 0.35s cubic-bezier(.4,0,.2,1), box-shadow 0.35s, border 0.25s;
+    z-index: 1;
+    margin: 0; /* Remove any margin that could break equal spacing */
+}
+
+/* Main content section layout for about page */
+.main-content-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Each content block inside main-content-section */
+.about-hero-content,
+.about-cards-content,
+.about-team-content,
+.about-feature-content {
+    background: #fff;
+    border-radius: 2rem;
+    box-shadow: 0 4px 24px 0 rgba(123,31,162,0.06);
+    padding: 2.5rem 1.5rem;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+/* Improved container style for about-feature-content */
+.about-feature-content-container {
+    max-width: 800px;
+    width: 92%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    background: linear-gradient(120deg, #f8f6fc 60%, #f3eafd 100%);
+    border-radius: 2.5rem;
+    box-shadow: 0 8px 32px 0 rgba(123,31,162,0.10), 0 2px 12px #FF572244;
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
+    position: relative;
+    z-index: 2;
+    border: 2.5px solid #f3eafd;
+    transition: box-shadow 0.3s, border 0.3s, background 0.3s;
+}
+
+.about-feature-content-container:hover {
+    box-shadow: 0 16px 48px 0 rgba(255,87,34,0.13), 0 2px 12px #7B1FA2aa;
+    border: 2.5px solid #FF5722;
+    background: linear-gradient(120deg, #fff 60%, #f3eafd 100%);
+}
+
+/* Unique Features Section Layout */
+.about-feature-content {
+    background: #fff;
+    border-radius: 2rem;
+    box-shadow: 0 4px 24px 0 rgba(123,31,162,0.06);
+    padding: 2.5rem 1.5rem;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    max-width: 700px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.about-feature-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.about-feature-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #2d114d;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.about-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    align-items: flex-start;
+}
+
+.about-feature-list li {
+    font-size: 1.13rem;
+    color: #7B1FA2;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: #f3eafd;
+    border-radius: 1rem;
+    padding: 0.7rem 1.2rem;
+    box-shadow: 0 2px 8px #7B1FA222;
+    transition: background 0.2s, color 0.2s;
+}
+
+.about-feature-list li:hover {
+    background: #FF5722;
+    color: #fff;
+}
+
+.feature-icon {
+    font-size: 1.3rem;
+    color: #FF5722;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .main-content-section {
+        gap: 2.5rem;
+        padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    }
+    .about-hero-content,
+    .about-cards-content,
+    .about-team-content,
+    .about-feature-content {
+        padding: 1.2rem 0.7rem;
+        border-radius: 1.2rem;
+    }
+    .team-matrix {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .team-card {
+        min-width: 180px;
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    }
+    .about-feature-content-container {
+        padding: 1.5rem 0.7rem;
+        border-radius: 1.2rem;
+        max-width: 98vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-content-section {
+        gap: 1.2rem;
+        padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+    }
+    .about-hero-content,
+    .about-cards-content,
+    .about-team-content,
+    .about-feature-content {
+        padding: 0.7rem 0.2rem;
+        border-radius: 0.7rem;
+    }
+    .team-matrix {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .team-card {
+        min-width: 0;
+        max-width: 100%;
+        padding: 1rem 0.4rem;
+    }
+    .team-image {
+        width: 64px;
+        height: 64px;
+    }
+    .about-feature-content-container {
+        padding: 0.7rem 0.2rem;
+        border-radius: 0.7rem;
+    }
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100vw;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(123,31,162,0.08);
+    position: relative;
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #7B1FA2;
+    letter-spacing: 1px;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(120deg, #7B1FA2 60%, #FF5722 100%);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.3rem;
+}
+
+.logo-text {
+    font-weight: 900;
+    color: #7B1FA2;
+    letter-spacing: 1.5px;
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #7B1FA2;
+    font-weight: 600;
+    font-size: 1.08rem;
+    padding: 0.3rem 1.1rem;
+    border-radius: 2rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: linear-gradient(90deg, #7B1FA2 10%, #FF5722 90%);
+    color: #fff;
+}
+
+/* Responsive Navbar */
+@media (max-width: 900px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1rem;
+    }
+    .nav-menu {
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-container {
+        padding: 0.7rem 0.5rem;
+    }
+    .nav-logo {
+        font-size: 1.1rem;
+    }
+    .nav-menu {
+        gap: 0.7rem;
+    }
+}
+
+/* Responsive adjustments for unique layout */
+@media (max-width: 900px) {
+    .team-carousel-track {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .team-card,
+    .team-card:nth-child(2) {
+        transform: none !important;
+        box-shadow: 0 8px 32px rgba(123,31,162,0.13), 0 1.5px 8px #7B1FA222;
+        border: 2.5px solid transparent;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-card {
+        padding: 1.2rem 0.7rem;
+        border-radius: 1.2rem 1.2rem 1.2rem 1.2rem;
+    }
+    .team-image {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* --- Fade-in animation for cards --- */
+@keyframes fadeInItem {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* --- Unique 3D Animated Profile Card for About Page --- */
+.team-matrix {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem 3.5rem;
+    justify-items: center;
+    align-items: stretch;
+    margin: 2.5rem 0 1.5rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.team-card {
+    position: relative;
+    background: linear-gradient(120deg, #fff 80%, #f3eafd 100%);
+    border-radius: 2.5rem 1.5rem 2.5rem 1.5rem;
+    box-shadow:
+        0 12px 40px rgba(123,31,162,0.13),
+        0 2px 12px #7B1FA222,
+        0 0 0 0 #fff;
+    padding: 2.8rem 2.2rem 2.2rem 2.2rem;
+    min-width: 320px;
+    max-width: 420px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2.5px solid #f3eafd;
+    transition:
+        transform 0.38s cubic-bezier(.4,0,.2,1),
+        box-shadow 0.38s,
+        border 0.22s;
+    z-index: 2;
+    margin: 0;
+    background-clip: padding-box;
+    overflow: visible;
+    opacity: 0;
+    transform: perspective(900px) rotateY(12deg) translateY(60px) scale(0.97);
+    filter: blur(8px) brightness(0.97);
+    will-change: opacity, transform, filter;
+}
+.team-card.visible {
+    opacity: 1;
+    transform: perspective(900px) rotateY(0deg) translateY(0) scale(1);
+    filter: blur(0) brightness(1);
+    animation: teamCardBounce 0.8s cubic-bezier(.4,0,.2,1);
+}
+@keyframes teamCardBounce {
+    0% {
+        opacity: 0;
+        transform: perspective(900px) rotateY(12deg) translateY(60px) scale(0.97);
+        filter: blur(8px) brightness(0.97);
+    }
+    60% {
+        opacity: 1;
+        transform: perspective(900px) rotateY(-8deg) translateY(-18px) scale(1.04);
+        filter: blur(2px) brightness(1.03);
+    }
+    80% {
+        transform: perspective(900px) rotateY(4deg) translateY(4px) scale(0.99);
+        filter: blur(0.5px) brightness(1);
+    }
+    100% {
+        opacity: 1;
+        transform: perspective(900px) rotateY(0deg) translateY(0) scale(1);
+        filter: blur(0) brightness(1);
+    }
+}
+.team-card:hover {
+    transform: perspective(900px) rotateY(-10deg) translateY(-18px) scale(1.07);
+    box-shadow: 0 32px 80px rgba(255,87,34,0.22), 0 2px 12px #7B1FA2cc, 0 0 0 8px #f3eafd;
+    border: 2.5px solid #FF5722;
+    background: linear-gradient(120deg, #f3eafd 60%, #fff 100%);
+    z-index: 4;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: -24px;
+    height: 32px;
+    border-radius: 2.5rem;
+    background: linear-gradient(120deg, #7B1FA2 10%, #FF5722 90%);
+    opacity: 0.13;
+    z-index: 0;
+    filter: blur(6px);
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.team-card:hover::before {
+    opacity: 0.22;
+}
+
+.team-image-3d {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: visible;
+    margin-bottom: 1.7rem;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 8px 32px #7B1FA244, 0 0 0 8px #fff, 0 0 0 16px #f3eafd;
+    background: #f3eafd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: floatProfile 3.2s ease-in-out infinite alternate;
+    transition: box-shadow 0.3s, border 0.3s;
+    border: 6px solid #7B1FA2;
+}
+@keyframes floatProfile {
+    0% { transform: translateY(0) scale(1) rotateZ(0deg);}
+    100% { transform: translateY(-18px) scale(1.04) rotateZ(2deg);}
+}
+.team-card:hover .team-image-3d {
+    border-color: #FF5722;
+    box-shadow: 0 16px 48px #FF572244, 0 0 0 8px #fff, 0 0 0 16px #f3eafd;
+}
+.team-image-3d img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    filter: drop-shadow(0 2px 12px #7B1FA233);
+    transition: filter 0.3s;
+}
+.team-card:hover .team-image-3d img {
+    filter: drop-shadow(0 8px 24px #FF572244);
+}
+
+.team-card h3 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #7B1FA2;
+    margin: 0 0 0.7rem 0;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-shadow: 0 2px 8px #f3eafd;
+}
+
+.team-card p {
+    color: #333;
+    font-size: 1.13rem;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    margin-bottom: 0.2rem;
+    text-shadow: 0 1px 6px #fff;
+}
+
+/* Add a floating badge for extra wow */
+.team-badge {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    background: linear-gradient(90deg, #FF5722 60%, #7B1FA2 100%);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 0.4rem 1.1rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 12px #FF572244;
+    letter-spacing: 1px;
+    z-index: 3;
+    animation: badgePop 1.2s cubic-bezier(.4,0,.2,1);
+}
+@keyframes badgePop {
+    0% { opacity: 0; transform: scale(0.7) translateY(-20px);}
+    80% { opacity: 1; transform: scale(1.08) translateY(4px);}
+    100% { opacity: 1; transform: scale(1) translateY(0);}
+}
+
+/* Animated player that moves front and back (horizontal oscillation) */
+.about-hero-player {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(120deg, #7B1FA2 60%, #FF5722 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 24px 0 rgba(255,87,34,0.18);
+    position: relative;
+    animation: playerOscillate 2.2s cubic-bezier(.4,0,.2,1) infinite alternate;
+    margin: 2rem auto 0 auto;
+}
+
+@keyframes playerOscillate {
+    0% { transform: translateX(0) scale(1);}
+    50% { transform: translateX(40px) scale(1.08);}
+    100% { transform: translateX(0) scale(1);}
+}
+
+/* Marquee animation for logo/player */
+.about-hero-marquee {
+    width: 100%;
+    overflow: visible;
+    position: relative;
+    height: 100px;
+    margin: 2rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.about-hero-marquee-line {
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    top: 50%;
+    height: 4px;
+    background: linear-gradient(90deg, #7B1FA2 10%, #FF5722 90%);
+    border-radius: 2px;
+    z-index: 1;
+    transform: translateY(-50%);
+    opacity: 0.18;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+.about-hero-marquee-inner {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    roght:100%
+    z-index: 2;
+    transform: translateY(-50%);
+    /* Use calc to ensure logo stays within the line: 90% line width - logo width */
+    animation: marqueeXLineEdgeFix 4s linear infinite alternate;
+    will-change: transform;
+}
+
+@keyframes marqueeXLineEdgeFix {
+    0% { transform: translateY(-50%) translateX(0); }
+    100% {
+        /* 90% of container width - logo width (80px) + 5% left offset */
+        transform: translateY(-50%) translateX(calc(90vw - 80px - 5vw));
+    }
+}
+
+.about-hero-player {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(120deg, #7B1FA2 60%, #FF5722 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 24px 0 rgba(255,87,34,0.18);
+    position: relative;
+}
+
+/* Responsive: adjust animation distance for mobile */
+@media (max-width: 600px) {
+    .about-hero-marquee {
+        height: 64px;
+    }
+    .about-hero-player {
+        width: 56px;
+        height: 56px;
+    }
+    .about-hero-marquee-line {
+        left: 5%;
+        width: 90%;
+    }
+    .about-hero-marquee-inner {
+        left: 5%;
+        animation: marqueeXLineEdgeFixMobile 3s linear infinite alternate;
+    }
+    @keyframes marqueeXLineEdgeFixMobile {
+        0% { transform: translateY(-50%) translateX(0); }
+        100% {
+            /* 90vw - logo width (56px) - 5vw for left offset */
+            transform: translateY(-50%) translateX(calc(90vw - 56px - 5vw));
+        }
+    }
+}
+
+/* --- Clean, modern team card style for About Page --- */
+.team-matrix {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 2.5rem;
+    justify-items: center;
+    align-items: stretch;
+    margin: 2.5rem 0 1.5rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.team-card {
+    position: relative;
+    background: linear-gradient(120deg, #fff 80%, #f3eafd 100%);
+    border-radius: 2rem;
+    box-shadow: 0 12px 40px rgba(123,31,162,0.13), 0 2px 12px #7B1FA222;
+    padding: 2.8rem 2.2rem 2.2rem 2.2rem;
+    min-width: 320px;
+    max-width: 420px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2.5px solid #f3eafd;
+    transition:
+        transform 0.28s cubic-bezier(.4,0,.2,1),
+        box-shadow 0.28s,
+        border 0.22s;
+    z-index: 2;
+    margin: 0;
+    background-clip: padding-box;
+    overflow: visible;
+    opacity: 0;
+    transform: translateY(60px) scale(0.97);
+    filter: blur(8px) brightness(0.97);
+    will-change: opacity, transform, filter;
+}
+.team-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0) brightness(1);
+    animation: contentBounce 0.7s cubic-bezier(.4,0,.2,1);
+}
+.team-card:hover {
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 0 24px 64px rgba(255,87,34,0.18), 0 2px 12px #7B1FA2cc;
+    border: 2.5px solid #FF5722;
+    background: linear-gradient(120deg, #f3eafd 60%, #fff 100%);
+    z-index: 4;
+}
+
+.team-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 6px solid #7B1FA2;
+    box-shadow: 0 6px 24px #7B1FA233;
+    background: #f3eafd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: border 0.3s;
+}
+.team-card:hover .team-image {
+    border-color: #FF5722;
+}
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Subtle shadow layer for 3D effect */
+.team-card::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: -18px;
+    height: 24px;
+    border-radius: 2rem;
+    background: linear-gradient(120deg, #7B1FA2 10%, #FF5722 90%);
+    opacity: 0.09;
+    z-index: 0;
+    filter: blur(3px);
+    pointer-events: none;
+}
+
+/* --- Fade-in animation for cards --- */
+@keyframes fadeInItem {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+    margin: 0; /* Remove any margin that could break equal spacing */
+}
+
+/* Responsive adjustments for matrix layout */
+@media (max-width: 1100px) {
+    .team-carousel-track {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 2rem;
+    }
+}
+@media (max-width: 700px) {
+    .team-carousel-track {
+        grid-template-columns: 1fr;
+        gap: 1.2rem 0;
+    }
+    .team-card {
+        min-width: 0;
+        max-width: 100%;
+    }
+    .team-image {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* --- Clean, modern team card style for About Page --- */
+.team-matrix {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 2.5rem;
+    justify-items: center;
+    align-items: stretch;
+    margin: 2.5rem 0 1.5rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.team-card {
+    position: relative;
+    background: linear-gradient(120deg, #fff 80%, #f3eafd 100%);
+    border-radius: 2rem;
+    box-shadow: 0 12px 40px rgba(123,31,162,0.13), 0 2px 12px #7B1FA222;
+    padding: 2.8rem 2.2rem 2.2rem 2.2rem;
+    min-width: 320px;
+    max-width: 420px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2.5px solid #f3eafd;
+    transition:
+        transform 0.28s cubic-bezier(.4,0,.2,1),
+        box-shadow 0.28s,
+        border 0.22s;
+    z-index: 2;
+    margin: 0;
+    background-clip: padding-box;
+    overflow: visible;
+    opacity: 0;
+    transform: translateY(60px) scale(0.97);
+    filter: blur(8px) brightness(0.97);
+    will-change: opacity, transform, filter;
+}
+.team-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0) brightness(1);
+    animation: contentBounce 0.7s cubic-bezier(.4,0,.2,1);
+}
+.team-card:hover {
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 0 24px 64px rgba(255,87,34,0.18), 0 2px 12px #7B1FA2cc;
+    border: 2.5px solid #FF5722;
+    background: linear-gradient(120deg, #f3eafd 60%, #fff 100%);
+    z-index: 4;
+}
+
+.team-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 6px solid #7B1FA2;
+    box-shadow: 0 6px 24px #7B1FA233;
+    background: #f3eafd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: border 0.3s;
+}
+.team-card:hover .team-image {
+    border-color: #FF5722;
+}
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Subtle shadow layer for 3D effect */
+.team-card::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: -18px;
+    height: 24px;
+    border-radius: 2rem;
+    background: linear-gradient(120deg, #7B1FA2 10%, #FF5722 90%);
+    opacity: 0.09;
+    z-index: 0;
+    filter: blur(3px);
+    pointer-events: none;
+}
+
+/* --- Fade-in animation for cards --- */
+@keyframes fadeInItem {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}

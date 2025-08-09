@@ -1,0 +1,383 @@
+/* Services Page Specific Styles */
+.services-section {
+    padding: 3rem 0;
+    background: #f3eafd;
+    min-height: 80vh;
+}
+.card-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    perspective: 1200px;
+    margin-top: 2rem;
+}
+.card-stack .service-card {
+    width: 340px;
+    height: 180px;
+    background: var(--white);
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 32px rgba(123,31,162,0.13);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+    position: relative;
+    transition: transform 0.5s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+    will-change: transform;
+}
+.card-stack .service-card.active {
+    box-shadow: 0 16px 48px rgba(255,87,34,0.18);
+    transform: scale(1.08) rotateY(0deg) translateY(-10px);
+    z-index: 2;
+}
+.card-stack .service-card:not(.active) {
+    opacity: 0.7;
+    transform: scale(0.95) rotateY(-8deg) translateY(20px);
+    z-index: 1;
+}
+
+/* --- Services Page Unique Styles --- */
+
+/* Hero Section */
+.services-hero-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: linear-gradient(120deg, #f8f6fc 60%, #f3eafd 100%);
+    padding: 4rem 0 2.5rem 0;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.services-hero-container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.services-hero-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #2d114d;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.orange-text {
+    color: #FF5722;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    font-size: 1.1rem;
+    color: #7B1FA2;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.breadcrumb a {
+    color: #7B1FA2;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+.breadcrumb a:hover {
+    color: #FF5722;
+}
+.breadcrumb-separator {
+    color: #FF5722;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.breadcrumb-current {
+    color: #7B1FA2;
+    font-weight: 700;
+}
+
+/* Floating shapes for hero background */
+.services-hero-background {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.13;
+    filter: blur(2px);
+    animation: floatShape 8s ease-in-out infinite alternate;
+}
+.shape-1 {
+    background: radial-gradient(circle, #7B1FA2 60%, transparent 100%);
+    width: 320px; height: 320px;
+    top: -80px; left: -120px;
+    animation-delay: 0s;
+}
+.shape-2 {
+    background: radial-gradient(circle, #FF5722 60%, transparent 100%);
+    width: 220px; height: 220px;
+    bottom: -60px; right: -100px;
+    animation-delay: 2s;
+}
+.shape-3 {
+    background: radial-gradient(circle, #00e6e6 60%, transparent 100%);
+    width: 160px; height: 160px;
+    top: 40%; left: 70%;
+    animation-delay: 4s;
+}
+@keyframes floatShape {
+    0% { transform: translateY(0) scale(1);}
+    100% { transform: translateY(40px) scale(1.08);}
+}
+
+/* --- Services Grid Section --- */
+.services-grid-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: linear-gradient(120deg, #f3eafd 60%, #f8f6fc 100%);
+    padding: 3rem 0 2.5rem 0;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.services-grid-container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+.service-detail-card {
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 24px rgba(123,31,162,0.10), 0 1.5px 8px #7B1FA222;
+    padding: 2.2rem 2rem 1.5rem 2rem;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.25s, box-shadow 0.25s, border 0.25s;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    color: #2d114d;
+    font-size: 1.08rem;
+    animation: fadeInItem 0.8s ease forwards;
+}
+.service-detail-card:hover {
+    transform: translateY(-10px) scale(1.04) rotate(-1deg);
+    box-shadow: 0 12px 32px rgba(255,87,34,0.15), 0 2px 12px #00e6e6cc;
+    border: 2px solid #7B1FA2;
+    background: linear-gradient(120deg, #f3eafd 60%, #fff 100%);
+    z-index: 2;
+}
+.service-detail-card h3 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: #7B1FA2;
+    margin: 0 0 0.7rem 0;
+}
+.service-detail-card p {
+    color: #333;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.services-grid-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.indicator-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #7B1FA2 60%, #FF5722 100%);
+    opacity: 0.18;
+    margin: 0 0.3rem;
+}
+.indicator-dot.active {
+    opacity: 1;
+    box-shadow: 0 0 12px #FF5722;
+}
+
+/* --- Who We Are Section --- */
+.who-we-are-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: linear-gradient(120deg, #f8f6fc 60%, #f3eafd 100%);
+    padding: 4rem 0 3rem 0;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.who-we-are-container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.who-we-are-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.who-we-are-left {
+    flex: 1 1 320px;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.who-we-are-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #2d114d;
+    margin: 0 0 1.2rem 0;
+    line-height: 1.2;
+}
+
+.who-we-are-description {
+    color: #7B1FA2;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.who-we-are-right {
+    flex: 1 1 320px;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.stat-card {
+    background: #7B1FA2;
+    border-radius: 1.2rem;
+    box-shadow: 0 6px 24px rgba(123,31,162,0.10), 0 1.5px 8px #7B1FA222;
+    padding: 1.7rem 1.2rem 1.2rem 1.2rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.25s, box-shadow 0.25s, border 0.25s;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.08rem;
+    animation: fadeInItem 0.8s ease forwards;
+}
+.stat-card:hover {
+    transform: translateY(-8px) scale(1.06) rotate(-1deg);
+    box-shadow: 0 12px 32px rgba(255,87,34,0.15), 0 2px 12px #00e6e6cc;
+    border: 2px solid #FF5722;
+    background: linear-gradient(120deg, #7B1FA2 60%, #FF5722 100%);
+    z-index: 2;
+}
+.stat-icon {
+    margin-bottom: 0.7rem;
+}
+.stat-card h3 {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0 0 0.5rem 0;
+}
+.stat-card p {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .who-we-are-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 700px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .who-we-are-section,
+    .services-hero-section,
+    .services-grid-section {
+        padding: 2rem 0 1rem 0;
+    }
+}
+
+/* --- Fade-in animation for cards --- */
+@keyframes fadeInItem {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
